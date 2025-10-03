@@ -1,0 +1,16 @@
+#!/bin/bash -l
+#SBATCH --account=uzh8
+#SBATCH --job-name="akoljanc_cpi_omp"
+#SBATCH --time=00:05:00
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=128
+#SBATCH --partition=normal
+#SBATCH --constraint=mc
+#SBATCH -e omp-%j.err
+#SBATCH -o omp-%j.out
+
+export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+
+srun cpi_omp
+-cpu-bind=none

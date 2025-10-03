@@ -1,0 +1,13 @@
+#!/bin/bash -l
+#SBATCH --account=uzh8
+#SBATCH --job-name="akoljanc_cpi_mpi"
+#SBATCH --time=00:05:00
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=128
+#SBATCH --cpus-per-task=1
+#SBATCH --partition=normal
+#SBATCH --constraint=mc
+#SBATCH -e mpi-%j.err
+#SBATCH -o mpi-%j.out
+
+srun cpi_mpi
