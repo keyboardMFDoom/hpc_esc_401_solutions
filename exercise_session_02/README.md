@@ -34,4 +34,6 @@ squeue -u akoljanc. For other jobs it's squeue -u username, I guess.
 - to get the output from squeue I specify: squeue -u akoljanc --format "%.A %.u %.p %.a %.j %D %t %r %S %L %p"
 
 ### Exercise 4 ###
-- still woring on
+- I ran "SLURM_CPUS_PER_TASK=1 and 10", if that's right then 1 was the slowest, 128 was in the middle and 10 was the fastest. Does that make sense?
+- changing to O0: it took way longer (approx. 24 second) and the precision was bad like 10 to the power of 7.
+
