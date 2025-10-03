@@ -8,7 +8,7 @@ In this session, you will compile and run your first programs on Eiger. This dir
 - Status is up to date and log showed only the initial repository
 
 ### Exercise 2 ###
-- cc: Compiler for C files. Man cc didn't really help but the lecture slides.
+- cc: Compiler for C files. Man cc didn't really help but the lecture slides. Examples are gcc and cce.
 - O0: Default of optimization choice. No optimization.
 - O3: From slide 24 -
  	Everything from O2:
