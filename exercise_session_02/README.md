@@ -8,9 +8,19 @@ In this session, you will compile and run your first programs on Eiger. This dir
 - Status is up to date and log showed only the initial repository
 
 ### Exercise 2 ###
-- cc:
-- O3:
-- O0:
+- cc: Compiler for C files. Man cc didn't really help but the lecture slides.
+- O0: Default of optimization choice. No optimization.
+- O3: From slide 24 -
+ 	Everything from O2:
+ 		- perform all supported optimizations which do not involve space-speed tradeoff
+ 		- not involving loop unrolling or function inlining when -O2 is specified
+ 		- increase of compilation time and the Performance of the generated code
+ 	Plus:
+ 		- finline-functions
+ 		- funswitch-loops
+ 		- fpredictive-commoning
+ 		- fgcs-after-reload
+ 		- ftree-vectorize options
 - current environment: is cray 23.12 the default?
 - module list: list of loaded modules
 - module avail: shows currently loaded modules (more specific than module list?)
