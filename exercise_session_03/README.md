@@ -44,3 +44,8 @@ In this folder you can find:
 		- O0: Default, no optimization
 	* adding -ffast-math would make it faster and adding -ffast-math -mavx2 would be the fastest (according to lecture 3, slide 23)
 	* Interestingly I got the result when adding -ffast-math -mavx2 for every compilation the result was: O0>O2>O3>O1
+
+- Results after parallelization
+	* as can be seen in results_optflags, the speedup was huge.
+	* compilation was done according to the lecture slides. In the Makefile I deleted all commands from the previous exercises to make because I          didn't know if it was going to be affected by the CCFLAGS, LDFLAGS and GCC. (see Makefile_before_parallel)
+	* code was inserted right before the for loop. I did it before the variable sum, but this didn't work.
