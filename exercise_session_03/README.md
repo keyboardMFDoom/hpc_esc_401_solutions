@@ -49,3 +49,14 @@ In this folder you can find:
 	* as can be seen in results_optflags, the speedup was huge.
 	* compilation was done according to the lecture slides. In the Makefile I deleted all commands from the previous exercises to make because I          didn't know if it was going to be affected by the CCFLAGS, LDFLAGS and GCC. (see Makefile_before_parallel)
 	* code was inserted right before the for loop. I did it before the variable sum, but this didn't work.
+
+- Plot and superlinear speedup:
+	* The plot looks like a superlinear speedup behaviour (for cpus<=2)
+	* According to internet and ChatGPT the most probable reason is better cache utilization:
+	  - A large problem is divided among processes, each process/thread works on a smaller subset of data
+		=> subset fits better into cache (L1/L2/L3), reducing slow memory access
+	* other reasons (which I don't understand yet):
+	  - Reduced paging or I/O overhead
+	  - Algorithmic effects / pruning (pretty sure this is not the explanation in my plot)
+	  - Improved locality / NUMA effects
+	  - Caching of shared data / OS-level optimizations
