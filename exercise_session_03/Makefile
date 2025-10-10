@@ -1,0 +1,49 @@
+cpi: cpi.o gt.o
+	gcc -o cpi cpi.o gt.o 
+
+cpi.o: cpi.c gt.h
+	gcc -O3 -ffast-math -mavx2 -c -o cpi.o cpi.c 
+
+gt.o: gt.c gt.h
+	gcc -O3 -ffast-math -mavx2 -c -o gt.o gt.c
+
+cpi_mpi: cpi_mpi.o gt.o
+	cc -o cpi_mpi cpi_mpi.o gt.o
+
+cpi_mpi.o: cpi_mpi.c gt.h
+	gcc -O3 -ffast-math -mavx2 -c -o cpi_mpi.o cpi_mpi.c
+
+sumO0: sumO0.o gt.o
+	gcc -o sumO0 sumO0.o gt.o -lm
+
+sumO0.o: sum.c gt.h
+	gcc -O0 -c -o sumO0.o sum.c
+
+sumO1: sumO1.o gt.o
+	gcc -o sumO1 sumO1.o gt.o -lm
+
+sumO1.o: sum.c gt.h
+	gcc -O1 -c -o sumO1.o sum.c
+
+sumO2: sumO2.o gt.o
+	gcc -o sumO2 sumO2.o gt.o -lm
+
+sumO2.o: sum.c gt.h
+	gcc -O2 -c -o sumO2.o sum.c
+
+sumO3: sumO3.o gt.o
+	gcc -o sumO3 sumO3.o gt.o -lm
+
+sumO3.o: sum.c gt.h
+	gcc -O3 -c -o sumO3.o sum.c
+
+sump: sump.o gt.h
+	gcc -o sump sump.o gt.o -lm
+
+sump.o: sump.c gt.h
+	gcc -Wall -O3 -ffast-math -mavx2 -fopenmp
+
+clean:
+	rm -f cpi cpi.o gt.o
+
+
