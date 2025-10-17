@@ -21,3 +21,17 @@
 	* chmod 070 /capstor/scratch/cscs/akoljanc/test_perm_scratch
 	* No, I could still change the permission. But when chmod 000 was was I could "write" but it wasn't saved, 
 	nor could I read it with cat test_perm_ex4.
+
+### Exercise 2 ###
+
+- For the five regex:
+	grep -E '^[01]*00$' binary.txt          
+	grep -E '^1[01]*1$' binary.txt
+        grep -E '110' binary.txt                
+	grep -E '^(.*1){3,}.*$' binary.txt    
+	grep -E '111' binary.txt
+
+### Exercise 3 ###
+
+- 4230283 took 10 seconds
+- 4572862171001 took 13 seconds
