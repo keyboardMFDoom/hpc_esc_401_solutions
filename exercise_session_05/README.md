@@ -6,4 +6,8 @@ I'm still learning C/C++ so for programming exercises that don't use Python I st
 - jacobi_step: implementation of the jacobi solver i.e. use the stencil at (i,j) with old values to get u_new(i,j)
 - norm_diff: to see if the difference of abs(u_old-u_new) put into the equation is lower than the tolerance
 
-
+## Exercise 2 ##
+- By eye the results look similar. I run the job script three times:
+	*ompnp1: just to see if it works without the #pragma put into place
+	*omp1: #pragma put in place and run on 1 thread
+	*omp4: #pragma put in place and run on 4 threads

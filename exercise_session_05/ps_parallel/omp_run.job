@@ -1,0 +1,15 @@
+#!/bin/bash -l
+#SBATCH --account=uzh8
+#SBATCH --job-name="akoljanc_ex5_poisson_solver"
+#SBATCH --time=00:05:00
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=4
+#SBATCH --partition=debug
+#SBATCH --constraint=mc
+#SBATCH -e omp4-%j.err
+#SBATCH -o omp4-%j.out
+
+export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+
+srun main
