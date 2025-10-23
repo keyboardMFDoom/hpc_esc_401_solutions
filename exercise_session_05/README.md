@@ -11,3 +11,6 @@ I'm still learning C/C++ so for programming exercises that don't use Python I st
 	*ompnp1: just to see if it works without the #pragma put into place
 	*omp1: #pragma put in place and run on 1 thread
 	*omp4: #pragma put in place and run on 4 threads
+
+## Exercise 3 ##
+not finished but it showed the same output if I put #pragma before both loops. Probably shouldve run it more often to really confirm this statement.
