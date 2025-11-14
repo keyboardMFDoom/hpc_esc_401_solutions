@@ -1,0 +1,13 @@
+#!/bin/bash -l
+#SBATCH --account=uzh8
+#SBATCH --job-name="akoljanc_cpi_oacc"
+#SBATCH --time=00:05:00
+#SBATCH --nodes=2
+#SBATCH --ntasks-per-node=4
+#SBATCH --gpus-per-task=1
+#SBATCH -e oacc-%j.err
+#SBATCH -o oacc-%j.out
+
+export OMP_NUM_THREADS=$SLURM_GPUS_PER_TASK
+
+srun cpi_openacc
