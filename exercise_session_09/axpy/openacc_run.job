@@ -1,0 +1,14 @@
+#!/bin/bash -l
+#SBATCH --account=uzh8
+#SBATCH --job-name="akoljanc_axpy"
+#SBATCH --time=00:05:00
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --gpus-per-task=1
+#SBATCH --constraint=gpu
+#SBATCH -e oacc-%j.err
+#SBATCH -o oacc-%j.out
+
+export OMP_NUM_THREADS=$SLURM_GPUS_PER_TASK
+
+srun -n 1 ./axpy.openacc N 
