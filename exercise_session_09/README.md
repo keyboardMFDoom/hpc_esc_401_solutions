@@ -18,8 +18,7 @@
 	reduction (+:sum) as in OpenMP
 
 - Difference in performance between GPU and CPU:
-	Again the host seems to be faster than the GPU. Except for one example but there I didn't modify anything so 
-	it's probably an error. I'm quite unsure if I really did it right.
+	Again the CPU seems to be faster than the GPU by a magnitude of 10^5. Except for one example but there I didn't 	modify anything so it's probably an error. I'm quite unsure if I really did it right.
  
 Makefile:10: extraneous text after 'ifeq' directive
 nvc++ -I../common -O3 -acc -mp -Minfo=acc -std=c++11 -gpu=cc90 dot_openacc.cpp -o dot.openacc
