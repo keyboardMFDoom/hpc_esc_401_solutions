@@ -1,14 +1,14 @@
 #!/bin/bash -l
 #SBATCH --account=uzh8
-#SBATCH --job-name="akoljanc_dot"
+#SBATCH --job-name="akoljanc_blur"
 #SBATCH --time=00:05:00
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --gpus-per-task=1
 #SBATCH --constraint=gpu
-#SBATCH -e dot-%j.err
-#SBATCH -o dot-%j.out
+#SBATCH -e blur_nocopies10_5-%j.err
+#SBATCH -o blur_nocopies10_5-%j.out
 
 export OMP_NUM_THREADS=1
 
-srun -n 1 ./dot.openacc
+srun -n 1 ./blur.openacc 10 5 

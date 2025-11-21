@@ -83,9 +83,9 @@ void blur_twice_gpu_nocopies(double *in , double *out , int n, int nsteps)
                 out[i] = blur(i, buffer);
             }
 
-            #pragma acc parallel loop
-            for (auto i = 0; i < n; ++i) {
-                in[i] = out[i];
+            double* tmp = in;
+            in = out;
+	    out = tmp;			   {
             }
         }
     }
@@ -123,7 +123,7 @@ int main(int argc, char** argv) {
     auto time_host = get_time() - tstart_host;
 
     auto tstart = get_time();
-    blur_twice_gpu_nocopies(x0, x1, n, nsteps);
+    blur_twice_gpu_naive(x0, x1, n, nsteps);
     auto time = get_time() - tstart;
 
     auto validate = true;

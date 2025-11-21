@@ -1,0 +1,4 @@
+dispersion 1D test of length n = 36 : 0.000274658MB
+==== success ====
+Host version took 1.9487e-05 s (1.9487e-07 s/step)
+GPU version took 2.6911e-05 s (2.6911e-07 s/step)

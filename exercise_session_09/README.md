@@ -6,10 +6,23 @@
 
 ## Exercise 2
 - Problem with the approach:
+	* It's slow since data transfer happens at each iteration (each iteration creates a copy)
 
 - Difference between blur_twice_gpu_naive vs blur_twice_gpu_nocopies:
+	* additionally loop through all elements (in[i] = out[i]
+	* puts the whole code into brackets to parallelize
+	* (w/ help from ChatGPT): The additional brackets make it possible to define a data region which will move the
+	  data once, keep it on the GPU for all steps and copy back the final result
+	
 
 - Execution time:
+	* A significant trend, when N is changed. Magnitude of ca. 10^2
+	* Difference:
+		- No copies: the CPU is faster than the GPU
+		- Naive: GPU is faster than GPU, exception when N=10 (possible that performance between GPU and CPU is 
+		  dependent on N?)
+		- nsteps made the difference: the performance increased either in both or at the cost of the GPU but a 
+		  remarkable increase in the CPU performance. Is that possible?
 
 ## Exercise 3
 - Reason for race conditions:
@@ -42,3 +55,4 @@ dot_gpu(double const*, double const*, int):
 
 My questions:
 - what's the problem with using #pragma acc kernels? doesn't it as well make sure that it's copied to the host?
+- can you quickly look through my sbatch script if it has all the right parameters set?
