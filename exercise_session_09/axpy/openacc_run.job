@@ -6,9 +6,9 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --gpus-per-task=1
 #SBATCH --constraint=gpu
-#SBATCH -e oacc-%j.err
-#SBATCH -o oacc-%j.out
+#SBATCH -e axpy5-%j.err
+#SBATCH -o axpy5-%j.out
 
-export OMP_NUM_THREADS=$SLURM_GPUS_PER_TASK
+export OMP_NUM_THREADS=1
 
-srun -n 1 ./axpy.openacc N 
+srun -n 1 ./axpy.openacc 5 
