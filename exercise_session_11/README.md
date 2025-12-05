@@ -33,5 +33,20 @@ The time was
 real 0m33.091s
 
 ## Exercise 4
+Vector Report:
+CC -O3 -fopt-info-vec -march=native -ffast-math -g -o nbody nbody.cpp
+nbody.cpp:64:22: optimized: loop vectorized using 32 byte vectors
+nbody.cpp:64:22: optimized: loop vectorized using 16 byte vectors
+nbody.cpp:51:27: optimized: loop vectorized using 32 byte vectors
+nbody.cpp:51:27: optimized: loop vectorized using 16 byte vectors
+/usr/include/c++/12/bits/vector.tcc:699:31: optimized: basic block part vectorized using 32 byte vectors
+/usr/include/c++/12/bits/random.tcc:412:42: optimized: loop vectorized using 32 byte vectors
+/usr/include/c++/12/bits/random.tcc:404:32: optimized: loop vectorized using 32 byte vectors
+/usr/include/c++/12/bits/random.tcc:404:32: optimized: loop vectorized using 16 byte vectors
+/usr/include/c++/12/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 32 byte vectors
+/usr/include/c++/12/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 32 byte vectors
 
+time was: real 0m14.634s
+
+The loop is vectorized twice in different contexts.
 ## Exercise 5
