@@ -29,6 +29,9 @@ nbody.cpp:41:14: optimized: basic block part vectorized using 32 byte vectors
 
 Fewer blocks needed to be optimized and some blocks were optimized twice. Tbh I didn't expect anything.
 
+The time was
+real 0m33.091s
+
 ## Exercise 4
 
 ## Exercise 5
